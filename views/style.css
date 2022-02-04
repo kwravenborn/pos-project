@@ -1,112 +1,5 @@
-<!DOCTYPE html>
-<html lang="en"> 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
-    <!----======== CSS ======== -->
-    <link rel="stylesheet" href="style.css">
-    <!----===== Boxicons CSS ===== -->
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-</head>
-<body>
-    <nav class="sidebar">
-        <header>
-            <div class="image-text">
-                <div class="text header-text">
-                    <br>
-                    <span class="name">POS</span>
-                    <h3>Hello, <%= name %></h3>
-                </div>
-            </div>
-            <i class='bx bx-chevron-right toggle'></i>
-        </header>
-        <div class="menu-bar">
-            <div class="menu">
-
-                <ul class="menu-links">
-                    <li class="nav-link">
-                        <a href="/home">
-                            <i class='bx bx-home icon' ></i>
-                            <span class="text nav-text">หน้าหลัก</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="/employee">
-                            <i class='bx bx-user-circle icon' ></i>
-                            <span class="text nav-text">ข้อมูลพนักงาน</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-user-pin icon' ></i>
-                            <span class="text nav-text">ข้อมูลลูกค้า</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-box icon'></i>
-                            <span class="text nav-text">ข้อมูลสินค้า</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-list-ul icon' ></i>
-                            <span class="text nav-text">ข้อมูลประเภทสินค้า</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-notepad icon' ></i>
-                            <span class="text nav-text">ข้อมูลร้านค้า</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="/logout">
-                            <i class='bx bx-log-out icon' ></i>
-                            <span class="text nav-text">ออกจากระบบ</span>
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-    </nav>
-    <script>
-        const body = document.querySelector('body'),
-      sidebar = body.querySelector('nav'),
-      toggle = body.querySelector(".toggle"),
-      searchBtn = body.querySelector(".search-box"),
-      modeSwitch = body.querySelector(".toggle-switch"),
-      modeText = body.querySelector(".mode-text");
-
-
-toggle.addEventListener("click" , () =>{
-    sidebar.classList.toggle("close");
-})
-
-searchBtn.addEventListener("click" , () =>{
-    sidebar.classList.remove("close");
-})
-
-modeSwitch.addEventListener("click" , () =>{
-    body.classList.toggle("dark");
-    
-    if(body.classList.contains("dark")){
-        modeText.innerText = "Light mode";
-    }else{
-        modeText.innerText = "Dark mode";
-        
-    }
-});
-    </script>
-<style>
+/* Google Font Import - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -117,11 +10,11 @@ modeSwitch.addEventListener("click" , () =>{
 :root{
     /* ===== Colors ===== */
     --body-color: #E4E9F7;
-    --sidebar-color: #5F5F5F;
-    --primary-color: #3ab7ff;
-    --primary-color-light: #cccccc;
+    --sidebar-color: #FFF;
+    --primary-color: #695CFE;
+    --primary-color-light: #F6F5FF;
     --toggle-color: #DDD;
-    --text-color: white;
+    --text-color: #707070;
 
     /* ====== Transition ====== */
     --tran-03: all 0.2s ease;
@@ -414,6 +307,3 @@ body.dark .switch::before{
 body.dark .home .text{
     color: var(--text-color);
 }
-</style>
-</body>
-</html>

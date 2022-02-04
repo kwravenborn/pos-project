@@ -42,7 +42,28 @@ app.get('/', ifNotLoggedin, (req,res,next) => {
         });
     });
     
-});// END OF ROOT PAGE
+});
+
+app.get('/home', ifNotLoggedin, (req,res,next) => {
+    dbConnection.execute("SELECT `name` FROM `employee` WHERE `id`=?",[req.session.userID])
+    .then(([rows]) => {
+        res.render('home',{
+            name:rows[0].name
+        });
+    });
+    
+});
+
+app.get('/employee', ifNotLoggedin, (req,res,next) => {
+    dbConnection.execute("SELECT `name` FROM `employee` WHERE `id`=?",[req.session.userID])
+    .then(([rows]) => {
+        res.render('employee',{
+            name:rows[0].name
+        });
+    });
+    
+});
+///END OF ROOT PAGE
 
 
 // // REGISTER PAGE
