@@ -63,6 +63,17 @@ app.get('/employee', ifNotLoggedin, (req,res,next) => {
     });
     
 });
+
+app.get('/customer', ifNotLoggedin, (req,res,next) => {
+    dbConnection.execute("SELECT `name` FROM `employee` WHERE `id`=?",[req.session.userID])
+    
+    .then(([rows]) => {
+        res.render('customer',{
+            name:rows[0].name
+        });
+    });
+    
+});
 ///END OF ROOT PAGE
 
 
